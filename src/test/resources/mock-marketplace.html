@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carbon Credit Mock UI</title>
+</head>
+<body>
+<h1>Carbon Credit Marketplace - QA Mock Environment</h1>
+
+<div>
+    <h3>User Registration</h3>
+    <input id="reg-email" type="text" placeholder="Email" />
+    <input id="reg-password" type="password" placeholder="Password" />
+    <button id="submit-reg" onclick="document.getElementById('reg-msg').innerText = 'Account Created Successfully'">Register</button>
+    <p id="reg-msg"></p>
+</div>
+
+<hr>
+
+<div>
+    <h3>Product Search</h3>
+    <input id="search-bar" type="text" placeholder="Search Credits..." />
+    <input id="filter-certified" type="checkbox" /> Certified Only
+    <button id="search-btn" onclick="document.getElementById('results').className = 'search-results'; document.getElementById('results').innerText = '10 Wind Farm Credits Found'">Search</button>
+    <div id="results"></div>
+</div>
+
+<hr>
+
+<div>
+    <h3>Checkout</h3>
+    <input id="credit-amount" type="text" placeholder="Amount" />
+    <button id="buy-btn" onclick="simulateBlockchainTx()">Buy</button>
+    <p id="tx-success" style="display:none; color: green; font-weight: bold;">Transaction Confirmed!</p>
+</div>
+
+<script>
+
+    function simulateBlockchainTx() {
+        setTimeout(() => {
+            document.getElementById('tx-success').style.display = 'block';
+        }, 3000);
+    }
+</script>
+</body>
+</html>
